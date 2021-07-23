@@ -2,7 +2,14 @@ module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      zIndex: {
+        '-1': '-1',
+      },
+      fontFamily: {
+        raleway: ['"Raleway"', 'sans-serif'],
+      },
+    },
   },
   variants: {
     extend: {},

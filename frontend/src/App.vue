@@ -1,9 +1,8 @@
-<template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+<template class="bg-black">
+  <div class="home bg-gray-900 min-h-screen relative z-0">
+    <div class="wallpaper min-h-screen w-full fixed -z-1 opacity-40"></div>
   <router-view/>
+  </div>
 </template>
 
 <style>
@@ -15,16 +14,14 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.wallpaper {
+  background-size: cover;
+   filter: grayscale(50%) blur(2px);
+  background-image: url('static/media/background.jpg');
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.gradient {
+  background: rgb(0,0,32);
+  background: linear-gradient(0deg, rgba(0,0,32,0.8) 0%, rgba(9,9,121,0) 50%);
 }
 </style>
