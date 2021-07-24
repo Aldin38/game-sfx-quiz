@@ -15,7 +15,16 @@ app.use(
 )
 
 app.get('/api/sounds', (_, res) => {
-  return res.json(Object.values(quiz.sounds).map(({ id, order }) => ({ id, order })))
+  const allSounds = Object.values(quiz.sounds).map(({ id, order }) => ({ id, order }));
+  let randomSounds = [];
+
+  for(i = 0; i < 6; i++) {
+    const randomEntry = allSounds[Math.floor(Math.random() * allSounds.length)]
+    randomSounds.push(randomEntry)
+    allSounds.splice(allSounds.indexOf(randomEntry), 1)
+  }
+  
+  return res.send(randomSounds)
 })
 
 app.post('/api/sounds/:id/answer', (req, res) => {
@@ -32,6 +41,14 @@ app.post('/api/sounds/:id/answer', (req, res) => {
 })
 
 app.use('/api/sounds', express.static(`${__dirname}/sfx`))
+
+// check if in production
+if (process.env.NODE_ENV === 'production') {
+  // static folder
+  app.use(express.static(__dirname = '/public/'));
+  // handle SPA
+  app.get(/.*/, (_, res) => res.sendFile(__dirname = '/public/index.html'));
+}
 
 app.listen(PORT, () =>
   console.log(`--- Quiz listening at http://localhost:${PORT} ---`)

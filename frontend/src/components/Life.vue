@@ -8,10 +8,10 @@
 <script>
 export default {
   name: 'Life',
-  data() {
-    return {
-      lives: 3,
-    };
+  computed: {
+    lives() {
+      return this.$store.state.lives;
+    },
   },
 };
 </script>

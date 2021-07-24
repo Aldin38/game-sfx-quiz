@@ -1,7 +1,7 @@
 <template>
   <Header />
   <div class="grid grid-cols-1 md:grid-cols-3 pt-24 xl:grid-cols-4">
-    <Card v-for="n in questions.length" :key="n" />
+    <Card v-for="item in questions" :key="item.order" :id="item.id" />
   </div>
 </template>
 <script>
@@ -21,7 +21,7 @@ export default {
     };
   },
   created() {
-    axios.get('http://localhost:3000/api/sounds')
+    axios.get('/api/sounds')
       .then((res) => {
         this.questions = res.data;
       });

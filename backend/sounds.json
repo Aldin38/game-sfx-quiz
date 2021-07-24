@@ -13,6 +13,7 @@
     "answers": [
       "zelda",
       "legend of zelda",
+      "the legend of zelda",
       "botw",
       "breath of the wild"
     ]
@@ -82,36 +83,30 @@
   },
   {
     "order": 13,
-    "id": "RRZLizLsyS",
-    "game": "Mario Kart",
-    "answers": ["mario kart"]
-  },
-  {
-    "order": 14,
     "id": "Kmm3VgaA8T",
     "game": "Pokemon",
     "answers": ["pokemon"]
   },
   {
-    "order": 15,
+    "order": 14,
     "id": "2w1zqV8zYm",
     "game": "Bioshock",
     "answers": ["bioshock"]
   },
   {
-    "order": 16,
+    "order": 15,
     "id": "0OrdsCtLsL",
     "game": "Dragon Quest IX",
     "answers": ["dragon quest"]
   },
   {
-    "order": 17,
+    "order": 16,
     "id": "IQPY0ILo41",
     "game": "Final Fantasy VII",
     "answers": ["final fantasy"]
   },
   {
-    "order": 18,
+    "order": 17,
     "id": "dGeVJUcfp1",
     "game": "EarthBound",
     "answers": [
@@ -120,13 +115,13 @@
     ]
   },
   {
-    "order": 19,
+    "order": 18,
     "id": "w49QfbwSF4",
     "game": "Half-life",
     "answers": ["half-life"]
   },
   {
-    "order": 20,
+    "order": 19,
     "id": "H6qww3W5Ri",
     "game": "Super Smash Bros",
     "answers": [
