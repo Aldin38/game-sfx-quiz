@@ -75,6 +75,6 @@ export default {
 <style scoped>
 .answer-input:disabled {
   background-color: #fff;
-  color: #0f0;
+  color: #04850c;
 }
 </style>

@@ -8,7 +8,9 @@ export default createStore({
   mutations: {
     removeLife(state) {
       state.lives -= 1;
-      console.log(state.lives);
+      if (state.lives <= 0) {
+        state.lives = 0;
+      }
     },
     incrementScore(state) {
       state.score += 1;

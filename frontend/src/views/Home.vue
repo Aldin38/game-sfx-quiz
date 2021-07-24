@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex justify-start items-center flex-col gradient z-1">
+  <div class="h-screen flex justify-start items-center flex-col z-1">
     <h1 class="hero-title text-white text-5xl pb-12 pt-48 font-raleway">Game SFX <br>Quiz</h1>
     <router-link
       to="/questions"
