@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex justify-start items-center flex-col z-1">
+  <div class="h-screen flex justify-start items-center flex-col gradient z-1">
     <h1 class="hero-title text-white text-5xl pb-12 pt-48 font-raleway">Game SFX <br>Quiz</h1>
     <router-link
       to="/questions"
@@ -30,5 +30,10 @@ export default {
 box-shadow: 0px -1px 29px 0px rgba(255,255,255,1);
 -webkit-box-shadow: 0px -1px 29px 0px rgba(255,255,255,1);
 -moz-box-shadow: 0px -1px 29px 0px rgba(255,255,255,1);
+}
+
+.gradient {
+  background: rgb(0,0,32);
+  background: linear-gradient(0deg, rgba(0,0,32,0.8) 0%, rgba(9,9,121,0) 50%);
 }
 </style>
