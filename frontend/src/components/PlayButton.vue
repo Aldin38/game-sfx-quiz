@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-full border-2 border-black flex h-14 w-14 bg-white cursor-pointer" ref="playBtn" @click="handleClick">
+  <div class="rounded-full border-2 border-black flex self-start h-14 w-14 bg-white cursor-pointer z-2 playBtn" @click="handleClick">
     <div class="arrow-right self-center justify-center my-0 mx-auto relative left-1"></div>
   </div>
 </template>
@@ -13,13 +13,18 @@ export default {
   },
   methods: {
     handleClick() {
-      this.$refs.playBtn.blur();
       AudioPlayer.playAudio(this.id);
     },
   },
 };
 </script>
 <style>
+.playBtn {
+  box-shadow: 10px 10px 23px -8px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 23px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 23px -8px rgba(0,0,0,0.75);
+}
+
 .arrow-right {
   width: 0;
   height: 0;

@@ -1,9 +1,11 @@
 <template>
-  <div class="flex card flex-row justify-center items-center py-5">
+  <div class="flex card flex-row justify-center items-end py-5">
     <PlayButton :id="id" />
-    <form class="self-end" @submit.prevent="handleSubmit">
-      <input ref="inputField" class="h-6 relative right-5 rounded self-end answer-input" v-model="input" :disabled="isDisabled ? true : false" placeholder="type name of the game.."/>
-    </form>
+    <div ref="inputField" :class="isCorrect ? 'correct-answer' : ''" class="relative rounded-lg right-8 bg-white flex">
+      <form @submit.prevent="handleSubmit">
+        <input :class="isCorrect ? 'text-green-600' : ''" class="h-6 ml-10 rounded-lg answer-input" v-model="input" :disabled="isDisabled ? true : false" placeholder="type name of the game.."/>
+      </form>
+    </div>
   </div>
 </template>
 <script>
@@ -64,7 +66,7 @@ export default {
   },
   computed: {
     isDisabled() {
-      if (this.isCorrect) {
+      if (this.isCorrect || !this.$store.state.lives) {
         return true;
       }
       return false;
@@ -73,8 +75,21 @@ export default {
 };
 </script>
 <style scoped>
-.answer-input:disabled {
-  background-color: #fff;
-  color: #04850c;
+.correct-answer {
+  animation: correct 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes correct {
+  0% {
+    box-shadow: 1px 0px 0px -48px rgba(79,201,21,0.67);
+    -webkit-box-shadow: 1px 0px 0px -48px rgba(79,201,21,0.67);
+    -moz-box-shadow: 1px 0px 0px -48px rgba(79,201,21,0.67);
+  }
+  100% {
+    box-shadow: 1px 0px 0px 2px rgba(79,201,21,0.67);
+    -webkit-box-shadow: 1px 0px 0px 2px rgba(79,201,21,0.67);
+    -moz-box-shadow: 1px 0px 0px 2px rgba(79,201,21,0.67);
+  }
 }
 </style>
