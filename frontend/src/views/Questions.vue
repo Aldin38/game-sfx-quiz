@@ -12,7 +12,6 @@
 import Header from '@/components/Header.vue';
 import Card from '@/components/Card.vue';
 import GameOver from '@/components/GameOver.vue';
-import axios from 'axios';
 
 export default {
   name: 'Home',
@@ -21,16 +20,13 @@ export default {
     Card,
     GameOver,
   },
-  data() {
-    return {
-      questions: [],
-    };
-  },
   created() {
-    axios.get('/api/sounds')
-      .then((res) => {
-        this.questions = res.data;
-      });
+    this.$store.dispatch('fetchQuestions');
+  },
+  computed: {
+    questions() {
+      return this.$store.state.questions;
+    },
   },
 };
 </script>

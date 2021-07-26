@@ -12,7 +12,7 @@ console.log('--- Loading sounds ---')
 const sounds = loadSounds()
 
 // Input and answer both stripped of any special characters, spaces and ignore uppercase
-const cleanString = input => input.replace(/[^0-9A-z]+/g, 'i').toLowerCase()
+const cleanString = input => input.replace(/[^0-9A-z]+/g, '').toLowerCase()
 
 const checkAnswer = (id, input) => {
   const cleaned = cleanString(input)
