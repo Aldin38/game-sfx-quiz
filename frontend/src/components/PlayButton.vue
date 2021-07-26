@@ -4,6 +4,8 @@
   </div>
 </template>
 <script>
+import AudioPlayer from '../assets/scripts/AudioPLayer';
+
 export default {
   name: 'PlayButton',
   props: {
@@ -12,29 +14,7 @@ export default {
   methods: {
     handleClick() {
       this.$refs.playBtn.blur();
-      this.audioPlayer().playAudio(this.id);
-    },
-    handlePlayError(error) {
-      if (error instanceof DOMException && error.message.indexOf('pause()') > -1) {
-        // Double clicked audio, pause() interferes with play()
-        console.error(error);
-        return;
-      }
-      console.log('Network error: No response. Try again.');
-    },
-    audioPlayer() {
-      let sound = new Audio();
-
-      const playAudio = (id) => {
-        sound.pause();
-        sound = new Audio(`/api/sounds/${id}.mp3`);
-        sound.volume = 0.7;
-        sound.play().catch(this.handlePlayError);
-      };
-
-      return {
-        playAudio,
-      };
+      AudioPlayer.playAudio(this.id);
     },
   },
 };
