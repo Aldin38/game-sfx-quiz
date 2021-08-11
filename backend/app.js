@@ -18,7 +18,7 @@ app.get('/api/sounds', (_, res) => {
   const allSounds = Object.values(quiz.sounds).map(({ id, order }) => ({ id, order }));
   let randomSounds = [];
 
-  for(i = 0; i < 6; i++) {
+  for(i = 0; i < 12; i++) {
     const randomEntry = allSounds[Math.floor(Math.random() * allSounds.length)]
     randomSounds.push(randomEntry)
     allSounds.splice(allSounds.indexOf(randomEntry), 1)
